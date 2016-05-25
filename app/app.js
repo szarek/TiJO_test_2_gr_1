@@ -1,6 +1,7 @@
 (function ()
 {
       'use strict';
+      var angular;
       var module = angular.module ('exerciseApp', ['ngResource', 'ngRoute']);
       var i;
       module.config (function ($provide, $routeProvider)
@@ -23,7 +24,6 @@
                   redirectTo: '/'
             });
       });
-      ;
 
       module.run (function ($httpBackend)
       {
@@ -54,7 +54,7 @@
             function a()
             {
 
-            };
+            }
 
             $httpBackend.whenGET (/\/api\/candy\/(\d+)/).respond (function (method, url)
             {
@@ -95,7 +95,7 @@
                         return [200];
                   }
                   return [404];
-            })
+            });
 
             $httpBackend.whenGET (/.*\.html/).passThrough ();
 
